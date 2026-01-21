@@ -1,11 +1,18 @@
+:root {
+  --branding-color: #6c63ff;
+  --secondary-color: #f9f7fe;
+  --heading-font-family: "Playfair Display", serif;
+}
+
 h1 {
-  font-family: "Playfair Display", serif;
+  font-family: var(--heading-font-family);
   font-size: 96px;
 }
 
 .hero {
-  background: #f9f7fe;
+  background: var(--secondary-color);
   text-align: center;
+  padding: 160px 20px;
 }
 
 .hero p {
@@ -18,4 +25,12 @@ h1 {
 .hero h2 {
   font-weight: normal;
   font-size: 26px;
+}
+
+.btn-branding {
+  background: var(--branding-color);
+  color: white;
+  font-size: 18px;
+  line-height: 27px;
+  padding: 12px 30px;
 }
