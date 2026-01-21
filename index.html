@@ -40,7 +40,99 @@
       <p>Hello, I am</p>
       <h1><strong>Rebecca Lange</strong></h1>
       <h2 class="mb-5">Front-end developer based in Utah</h2>
-      <a href="#" class="btn btn-branding">Contact Me</a>
+      <div>
+        <a href="#" class="btn btn-branding">Contact Me</a>
+      </div>
+    </div>
+    <p class="text-center m-5">Featured Project</p>
+
+    <div class="container">
+      <div class="row mb-5">
+        <!--added mb-5 to add spacing between the app images/descriptions-->
+
+        <div class="col d-none d-lg-block">
+          <!--
+            -col-6 changed to col just to tell bootstrap to divide the columns evenly
+            -both these divs are inside the "row" div, which is why bootstrap knows to 
+            divide the columns into two even columns
+            -d-none means display-none, so the image is only displayed when the screen is
+            md (d-md-block)
+          -->
+          <img src="images/weather.png" class="img-fluid" alt="" />
+          <!--img-fluid makes it so that the image does not take the fullscreen
+          it makes it responsive-->
+        </div>
+
+        <div class="col">
+          <div class="project-description">
+            <h2 class="mb-5">Weather</h2>
+            <p class="mb-4 text-muted">
+              A weather app is a specialized software application that functions
+              as an interface between complex, global meteorological data
+              networks and a user's mobile device or desktop. It provides
+              real-time, hyperlocal, and forecasted atmospheric conditions.
+            </p>
+            <a href="" class="btn btn-branding-outline"> Learn more </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col">
+          <div class="project-description">
+            <h2 class="mb-5">Hobbies</h2>
+            <p class="mb-4 text-muted">
+              This comprehensive culinary guide acts as a foundational
+              repository for understanding different cooking techniques. Whether
+              you want to become proficient in fresh meal preparation, stovetop
+              cooking, oven hacks, or deep frying, this page has the answers.
+            </p>
+            <a href="" class="btn btn-branding-outline"> Learn more </a>
+          </div>
+        </div>
+
+        <div class="col d-none d-lg-block">
+          <img src="images/cooking.png" class="img-fluid" alt="" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-none d-lg-block">
+          <img src="images/exercise.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col">
+          <div class="project-description">
+            <h2 class="mb-5">Health</h2>
+            <p class="mb-4 text-muted">
+              This comprehensive health page acts as a digital gymnasium and
+              educational hub, designed to guide users to finding their favorite
+              form of exercise, whether it be aerobic conditioning, muscle
+              strengthening, or flexibility, exercise offers a holistic approach
+              to long-term vitality
+            </p>
+            <a href="" class="btn btn-branding-outline"> Learn more </a>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
+
+<!--
+      <div class="container">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <p class="text-center m-5">Featured Project</p>
+          <h2 class="mb-5">Weather App</h2>
+          <p class="mb-4">
+            Type in a city, country, or anywhere in the world to learn the
+            current day, time, and temperature!
+          </p>
+          <a href="" class="btn btn-branding-outline"> Learn more </a>
+        </div>
+      </div>
+    </div>
+  *This whole section was added to align it all to the right, so that it looked the way
+  I wanted it to look. The div.row, and then two div.col-6s were added and that aligned
+  it
+-->
