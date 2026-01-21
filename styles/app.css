@@ -1,3 +1,21 @@
 h1 {
   font-family: "Playfair Display", serif;
+  font-size: 96px;
+}
+
+.hero {
+  background: #f9f7fe;
+  text-align: center;
+}
+
+.hero p {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  color: #272142;
+}
+
+.hero h2 {
+  font-weight: normal;
+  font-size: 26px;
 }
