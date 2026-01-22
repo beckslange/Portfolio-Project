@@ -72,16 +72,16 @@ p {
     padding: 80px 20px;
   }
 
-  .about-hero {
+  .content-container {
     text-align: center;
     padding: 0;
   }
 
-  .about-hero.container {
+  .content-container.container {
     padding: 12px;
   }
 
-  .about-hero .about-hero-content h1 {
+  .content-container .content h1 {
     font-size: 44px;
     line-height: 1.2;
   }
@@ -91,22 +91,22 @@ p {
   }
 }
 
-.about-hero {
+.content-container {
   padding: 120px 20px;
 }
 
-.about-hero h1 {
+.content-container h1 {
   font-size: 60px;
   line-height: 80px;
 }
 
-.about-hero h2 {
+.content-container h2 {
   font-size: 18px;
 }
-.about-hero p {
+.content-container p {
   font-size: 14px;
 }
-.about-hero-content {
+.content {
   margin: 0;
   padding-right: 30px;
 }
