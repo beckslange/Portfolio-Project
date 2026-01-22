@@ -91,6 +91,19 @@ p {
   }
 }
 
+.logo {
+  max-height: 40px;
+}
+
+.navbar .nav-link {
+  color: var(--branding-color);
+}
+
+.navbar .nav-link:hover {
+  color: #574fff;
+  font-weight: bold;
+}
+
 .content-container {
   padding: 120px 20px;
 }

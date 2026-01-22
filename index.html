@@ -36,6 +36,37 @@
     <link rel="stylesheet" href="styles/app.css" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <img src="images/logo.png" alt="Logo" class="logo" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/work.html">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="hero">
       <p>Hello, I am</p>
       <h1><strong>Rebecca Lange</strong></h1>
@@ -95,7 +126,8 @@
           <img src="images/cooking.png" class="img-fluid" alt="" />
         </div>
       </div>
-      <div class="row">
+
+      <div class="row mb-5">
         <div class="col d-none d-lg-block">
           <img src="images/exercise.png" class="img-fluid" alt="" />
         </div>
@@ -111,6 +143,25 @@
             </p>
             <a href="" class="btn btn-branding-outline"> Learn more </a>
           </div>
+        </div>
+      </div>
+
+      <div class="row mb-5">
+        <div class="col">
+          <div class="project-description">
+            <h2 class="mb-5">World Clock</h2>
+            <p class="mb-4 text-muted">
+              This comprehensive culinary guide acts as a foundational
+              repository for understanding different cooking techniques. Whether
+              you want to become proficient in fresh meal preparation, stovetop
+              cooking, oven hacks, or deep frying, this page has the answers.
+            </p>
+            <a href="" class="btn btn-branding-outline"> Learn more </a>
+          </div>
+        </div>
+
+        <div class="col d-none d-lg-block">
+          <img src="images/clock.png" class="img-fluid" alt="" />
         </div>
       </div>
     </div>
