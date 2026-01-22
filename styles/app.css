@@ -95,21 +95,25 @@ p {
   padding: 120px 20px;
 }
 
-.content-container h1 {
-  font-size: 60px;
-  line-height: 80px;
-}
-
-.content-container h2 {
-  font-size: 18px;
-}
-.content-container p {
-  font-size: 14px;
-}
 .content {
+  text-align: center;
   margin: 0;
   padding-right: 30px;
 }
+.content h1 {
+  font-size: 60px;
+  line-height: 80px;
+}
+.content h2 {
+  font-size: 18px;
+}
+.content h3 {
+  font-size: 24px;
+}
+.content p {
+  font-size: 14px;
+}
+
 img {
   border-radius: 7px;
 }
