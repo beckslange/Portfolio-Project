@@ -96,11 +96,51 @@ p {
 }
 
 .navbar .nav-link {
+  color: #272142;
+}
+
+.navbar .nav-link .active {
   color: var(--branding-color);
 }
 
 .navbar .nav-link:hover {
-  color: #574fff;
+  color: rgba(39, 33, 66, 0.8);
+  font-weight: bold;
+  transition: all 100ms ease-in-out;
+}
+
+.navbar .nav-link.active {
+  text-decoration: underline;
+}
+
+nav {
+  padding: 20px 0;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  display: inline;
+  list-style: none;
+  line-height: 42px;
+  margin-left: 15px;
+}
+
+nav li a.active {
+  text-decoration: underline;
+}
+
+nav a {
+  text-decoration: none;
+  color: #272142;
+  transition: all 100ms ease-in-out;
+}
+
+nav a:hover {
+  color: rgba(39, 33, 66, 0.8);
   font-weight: bold;
 }
 
