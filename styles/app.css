@@ -13,6 +13,9 @@ h2 {
   font-size: 60px;
 }
 
+h4 {
+  font-size: 48px;
+}
 p {
   font-weight: normal;
   font-size: 16px;
@@ -88,6 +91,12 @@ p {
   .project-description {
     padding: 0;
     text-align: center;
+  }
+  h4 {
+    font-size: 26px;
+  }
+  footer p {
+    font-size: 14px;
   }
 }
 
@@ -177,4 +186,44 @@ img {
   max-width: 100%;
   display: block;
   margin: 0 auto;
+}
+
+footer {
+  margin: 60px;
+}
+
+footer .email {
+  text-decoration: none;
+  color: black;
+  font-size: 24px;
+  text-align: center;
+}
+
+footer .email:hover {
+  color: var(--branding-color);
+}
+
+footer .social-links a {
+  margin: 0 20px;
+  color: var(--branding-color);
+  background: var(--secondary-color);
+  padding: 10px 14px;
+  font-size: 18px;
+  border-radius: 50%;
+  transition: all 100ms ease-in-out;
+}
+
+footer .social-links a:hover {
+  color: white;
+  background: var(--branding-color);
+}
+
+footer .contact-box {
+  background: var(--secondary-color);
+  padding: 30px 120px;
+  border-radius: 10px;
+}
+
+footer .contact-box p {
+  margin: 0;
 }
