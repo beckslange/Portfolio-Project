@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise Section</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f6f0ff;
+        color: #3c2a57;
+      }
+
+      section {
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px 25px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: blueviolet;
+        font-size: 48px;
+        margin-bottom: 15px;
+      }
+
+      h3 {
+        font-weight: normal;
+        margin: 20px 0 30px;
+      }
+
+      .center a {
+        margin: 0 10px;
+        text-decoration: none;
+        color: blueviolet;
+        font-weight: bold;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+      }
+
+      .gallery img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      button {
+        background: blueviolet;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+      }
+
+      button:hover {
+        transform: scale(0.95);
+        background: #9370db;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Let’s Exercise</h1>
+
+      <div class="center">
+        👟
+        <a
+          href="https://www.myhealth.va.gov/mhv-portal-web/ss20200821-importance-of-cardio"
+          target="_blank"
+          rel="noopener"
+          aria-label="Learn about cardio exercise"
+          >Cardio</a
+        >
+        🏋🏼‍♂️
+        <a
+          href="https://www.healthline.com/health/fitness/benefits-of-strength-training"
+          target="_blank"
+          rel="noopener"
+          aria-label="Learn about strength training"
+          >Weights</a
+        >
+        🧘🏻‍♀️
+        <a
+          href="https://www.healthline.com/nutrition/pilates-benefits"
+          target="_blank"
+          rel="noopener"
+          aria-label="Learn about pilates"
+          >Pilates</a
+        >
+      </div>
+
+      <h3>Which is better? It’s up to YOU!</h3>
+
+      <div class="gallery">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/168/104/original/running.jpeg"
+          alt="Person running outdoors for cardio exercise"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/168/102/original/weightlifting.jpeg"
+          alt="Person lifting weights in a gym"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/168/101/original/pilates.jpeg"
+          alt="Person practicing pilates for flexibility and strength"
+        />
+      </div>
+
+      <button
+        onclick="exercisePrompt()"
+        aria-label="Choose an exercise membership"
+      >
+        👉🏻 Choose Your Membership 👈🏻
+      </button>
+    </section>
+
+    <script>
+      function exercisePrompt() {
+        const name = prompt("What is your name?");
+        const email = prompt("What is your email?");
+        const membership = prompt(
+          "Which exercise do you prefer — cardio, weights, or pilates?"
+        );
+        if (name && email && membership) {
+          alert(`Thanks ${name}! We'll send ${membership} info to ${email}.`);
+        } else {
+          alert("You didn't fill out all the information. Try again!");
+        }
+      }
+    </script>
+  </body>
+</html>

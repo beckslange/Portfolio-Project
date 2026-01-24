@@ -35,11 +35,15 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="images/logo.png" alt="" class="logo d-none d-md-block" />
+        <a class="navbar-brand" href="/" title="Homepage">
+          <img
+            src="images/logo.png"
+            alt="SheCodes logo"
+            class="logo d-none d-md-block"
+          />
           <img
             src="images/smalllogo.png"
-            alt=""
+            alt="SheCodes logo"
             class="logo d-block d-md-none"
           />
         </a>
@@ -57,16 +61,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="/" title="Homepage">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html">About </a>
+              <a class="nav-link" href="/about.html" title="About Rebecca"
+                >About</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/work.html">Projects</a>
+              <a class="nav-link" href="/work.html" title="Rebecca's projects"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="/contact.html">Contact</a>
+              <a
+                class="nav-link active"
+                href="/contact.html"
+                title="Rebecca's contact information"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -82,6 +95,7 @@
           href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
           target="_blank"
           rel="noopener"
+          title="My gmail"
         >
           beckslange96@gmail.com
         </a>
@@ -93,6 +107,7 @@
           href="https://app.netlify.com/teams/beckslange/projects"
           target="_blank"
           rel="noopener"
+          title="My netlify projects"
         >
           Rebecca's Netlify Projects
         </a>
@@ -104,10 +119,57 @@
           href="https://www.linkedin.com/in/rebecca-lange-804b8b111/"
           target="_blank"
           rel="noopener"
+          title="My LinkedIn"
         >
           Rebecca Lange
         </a>
       </p>
+      <footer>
+        <div
+          class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
+        >
+          <div>
+            <h4>Work Inquiry</h4>
+            <p class="text-muted">Let's work together</p>
+          </div>
+          <div>
+            <a
+              href="/contact.html"
+              class="btn btn-branding"
+              title="Contact page"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
+          class="email d-flex justify-content-center mb-4"
+          target="_blank"
+          title="My email"
+        >
+          beckslange96@gmail.com
+        </a>
+        <div class="social-links d-flex justify-content-center">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
+            target="_blank"
+            title="My email"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+          <a
+            href="https://github.com/beckslange"
+            target="_blank"
+            title="My Github"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/rebecca-lange-804b8b111/"
+            target="_blank"
+            title="My LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

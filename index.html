@@ -9,7 +9,7 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
@@ -24,25 +24,31 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.min.js"></script>
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <script
       src="https://kit.fontawesome.com/d0219949b5.js"
       crossorigin="anonymous"
     ></script>
-
-    <title>Portfolio Project/Homepage</title>
+    <meta
+      name="description"
+      content="Rebecca is a front-end engineer raised in Colorado and based in Utah. She was professionally trained in front-end development through SheCodes"
+    />
+    <title>Responsive Portfolio Project</title>
     <link rel="stylesheet" href="styles/app.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container">
-        <a class="navbar-brand" href="/">
-          <img src="images/logo.png" alt="" class="logo d-none d-md-block" />
+        <a class="navbar-brand" href="/" title="Homepage">
+          <img
+            src="images/logo.png"
+            alt="SheCodes logo"
+            class="logo d-none d-md-block"
+          />
           <img
             src="images/smalllogo.png"
-            alt=""
+            alt="SheCodes logo"
             class="logo d-block d-md-none"
           />
         </a>
@@ -60,16 +66,25 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link active" href="/">Home</a>
+              <a class="nav-link active" href="/" title="Homepage">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/about.html">About</a>
+              <a class="nav-link" href="/about.html" title="About Rebecca"
+                >About</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/work.html">Projects</a>
+              <a class="nav-link" href="/work.html" title="Rebecca's projects"
+                >Projects</a
+              >
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact.html">Contact</a>
+              <a
+                class="nav-link"
+                href="/contact.html"
+                title="Rebecca's contact information"
+                >Contact</a
+              >
             </li>
           </ul>
         </div>
@@ -80,7 +95,9 @@
       <h1><strong>Rebecca Lange</strong></h1>
       <h2 class="mb-5">Front-end developer based in Utah</h2>
       <div>
-        <a href="#" class="btn btn-branding">Contact Me</a>
+        <a href="#contact-email" class="btn btn-branding" title="Contact Me"
+          >Contact Me</a
+        >
       </div>
     </div>
     <p class="text-center m-5">Featured Project</p>
@@ -111,7 +128,14 @@
               networks and a user's mobile device or desktop. It provides
               real-time, hyperlocal, and forecasted atmospheric conditions.
             </p>
-            <a href="" class="btn btn-branding-outline"> Learn more </a>
+            <a
+              href="weather/index.html"
+              target="_blank"
+              class="btn btn-branding-outline"
+              title="Weather App"
+            >
+              Learn more
+            </a>
           </div>
         </div>
       </div>
@@ -126,7 +150,14 @@
               you want to become proficient in fresh meal preparation, stovetop
               cooking, oven hacks, or deep frying, this page has the answers.
             </p>
-            <a href="" class="btn btn-branding-outline"> Learn more </a>
+            <a
+              href="/cooking/index.html"
+              target="_blank"
+              class="btn btn-branding-outline"
+              title="Cooking Website"
+            >
+              Learn more
+            </a>
           </div>
         </div>
 
@@ -149,7 +180,14 @@
               strengthening, or flexibility, exercise offers a holistic approach
               to long-term vitality
             </p>
-            <a href="" class="btn btn-branding-outline"> Learn more </a>
+            <a
+              href="health/index.html"
+              target="_blank"
+              class="btn btn-branding-outline"
+              title="Health Website"
+            >
+              Learn more
+            </a>
           </div>
         </div>
       </div>
@@ -165,7 +203,14 @@
               Greenwich, London. This is why we call the standard time in the UK
               “GMT,” which stands for Greenwich Mean Time.
             </p>
-            <a href="" class="btn btn-branding-outline"> Learn more </a>
+            <a
+              href="clock/index.html"
+              target="_blank"
+              class="btn btn-branding-outline"
+              title="World Clock App"
+            >
+              Learn more
+            </a>
           </div>
         </div>
 
@@ -181,11 +226,20 @@
             <h4>Work Inquiry</h4>
             <p class="text-muted">Let's work together</p>
           </div>
-          <div><a href="" class="btn btn-branding">Contact Me</a></div>
+          <div>
+            <a
+              href="/contact.html"
+              class="btn btn-branding"
+              title="Contact Page"
+              >Contact Me</a
+            >
+          </div>
         </div>
         <a
+          id="contact-email"
           href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
           class="email d-flex justify-content-center mb-4"
+          title="My email"
         >
           beckslange96@gmail.com
         </a>
@@ -193,14 +247,19 @@
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
             target="_blank"
+            title="My email"
             ><i class="fa-solid fa-envelope"></i
           ></a>
-          <a href="https://github.com/beckslange" target="_blank"
+          <a
+            href="https://github.com/beckslange"
+            target="_blank"
+            title="Rebecca's Github"
             ><i class="fa-brands fa-github"></i
           ></a>
           <a
             href="https://www.linkedin.com/in/rebecca-lange-804b8b111/"
             target="_blank"
+            title="Rebecca's LinkedIn"
             ><i class="fa-brands fa-linkedin"></i
           ></a>
         </div>

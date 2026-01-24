@@ -176,6 +176,16 @@ nav a:hover {
   font-size: 14px;
 }
 
+.projects .col-md-6 {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.projects .col-md-6:hover {
+  transform: scale(0.97);
+  opacity: 0.85;
+  cursor: pointer;
+}
+
 img {
   border-radius: 7px;
 }

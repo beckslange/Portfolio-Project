@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cooking Hobby</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f6f0ff;
+        color: #3c2a57;
+      }
+
+      section {
+        background: #ffffff;
+        max-width: 900px;
+        margin: 60px auto;
+        padding: 40px 25px;
+        border-radius: 15px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+
+      h1 {
+        color: blueviolet;
+        font-size: 48px;
+        margin-bottom: 10px;
+      }
+
+      h3 {
+        font-weight: normal;
+        margin-bottom: 30px;
+      }
+
+      .chef-image {
+        max-width: 500px;
+        margin: 0 auto 20px;
+      }
+
+      .chef-image img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+        margin: 25px 0;
+      }
+
+      .gallery img {
+        width: 100%;
+        border-radius: 10px;
+      }
+
+      button {
+        background: blueviolet;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 15px 30px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+      }
+
+      button:hover {
+        transform: scale(0.95);
+        background: #9370db;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <h1>Cooking</h1>
+      <h3>My favorite hobby for an enriching life</h3>
+
+      <div class="chef-image">
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/168/499/original/chef.jpeg"
+          alt="Chef cooking a meal in a kitchen"
+        />
+      </div>
+
+      <div class="gallery">
+        <img
+          src="https://cdn.prod.website-files.com/633b4585b1053081daef6978/6489d47b28c2b24c477f6027_L1005590-1176x781_150.jpg"
+          alt="Preparing ingredients on a kitchen counter"
+        />
+        <img
+          src="https://s3.amazonaws.com/shecodesio-production/uploads/files/000/168/500/original/stovetop.jpeg"
+          alt="Cooking on a stovetop"
+        />
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFNQfELTlqRosw2ImUTfBsSLoVWeS7boo_SA"
+          alt="Baking food in an oven"
+        />
+        <img
+          src="https://static01.nyt.com/images/2013/10/23/dining/23FLEX_SPAN/23FLEX-superJumbo.jpg"
+          alt="Frying food in a pan"
+        />
+      </div>
+
+      <button onclick="recipePrompt()">👉🏻 Get Recipes Here 👈🏻</button>
+    </section>
+
+    <script>
+      function recipePrompt() {
+        const name = prompt("What's your name?");
+        const email = prompt("What's your email?");
+        const answer = prompt("Would you like to receive easy recipes?");
+
+        if (answer && answer.toLowerCase().includes("yes")) {
+          alert(`Yay, ${name}! Recipes are on the way to ${email}.`);
+        } else {
+          alert(`No problem, ${name}! Enjoy exploring.`);
+        }
+      }
+    </script>
+  </body>
+</html>

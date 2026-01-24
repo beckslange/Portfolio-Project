@@ -9,7 +9,7 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
@@ -25,7 +25,6 @@
     <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
     <script src="https://unpkg.com/typewriter-effect@latest/dist/core.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <script
       src="https://kit.fontawesome.com/d0219949b5.js"
@@ -36,20 +35,61 @@
     <link rel="stylesheet" href="styles/app.css" />
   </head>
   <body>
-    <div class="container">
-      <nav class="d-flex justify-content-between">
-        <a href="/">
-          <img src="images/logo.png" alt="" class="logo d-none d-md-block" />
-          <img src="images/smalllogo.png" alt="" class="logo d-block d-md-none"
-        /></a>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about.html" class="active">About</a></li>
-          <li><a href="/work.html">Projects</a></li>
-          <li><a href="/contact.html">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container">
+        <a class="navbar-brand" href="/" title="Homepage">
+          <img
+            src="images/logo.png"
+            alt="SheCodes logo"
+            class="logo d-none d-md-block"
+          />
+          <img
+            src="images/smalllogo.png"
+            alt="SheCodes logo"
+            class="logo d-block d-md-none"
+          />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/" title="Homepage">Home</a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                href="/about.html"
+                title="About Rebecca"
+                >About</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/work.html" title="Rebecca's projects"
+                >Projects</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="/contact.html"
+                title="Rebecca's contact information"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
     <div class="content-container container">
       <div class="row">
         <div class="col-lg-6">
@@ -62,17 +102,69 @@
               everything is well explained. The homework and deadlines are great
               to help you stay focused and on track
             </p>
-            <a href="" class="btn btn-branding mb-4">See my projects</a>
+            <a
+              href="https://app.netlify.com/teams/beckslange/projects"
+              class="btn btn-branding mb-4"
+              target="_blank"
+              title="My Netlify Projects"
+              >See my projects</a
+            >
           </div>
         </div>
         <div class="col-lg-6">
           <img
             src="images/rebecca.png"
-            alt=""
+            alt="Rebecca Lange"
             class="img-fluid responsive-image"
           />
         </div>
       </div>
+      <footer>
+        <div
+          class="contact-box d-flex justify-content-between mb-5 d-none d-md-flex"
+        >
+          <div>
+            <h4>Work Inquiry</h4>
+            <p class="text-muted">Let's work together</p>
+          </div>
+          <div>
+            <a
+              href="/contact.html"
+              class="btn btn-branding"
+              title="Contact page"
+              >Contact Me</a
+            >
+          </div>
+        </div>
+        <a
+          href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
+          class="email d-flex justify-content-center mb-4"
+          target="_blank"
+          title="My email"
+        >
+          beckslange96@gmail.com
+        </a>
+        <div class="social-links d-flex justify-content-center">
+          <a
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=beckslange96@gmail.com"
+            target="_blank"
+            title="Gmail"
+            ><i class="fa-solid fa-envelope"></i
+          ></a>
+          <a
+            href="https://github.com/beckslange"
+            target="_blank"
+            title=" Rebecca's Github"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/in/rebecca-lange-804b8b111/"
+            target="_blank"
+            title="Rebecca's LinkedIn"
+            ><i class="fa-brands fa-linkedin"></i
+          ></a>
+        </div>
+      </footer>
     </div>
   </body>
 </html>
