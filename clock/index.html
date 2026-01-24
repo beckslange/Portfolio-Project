@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.6.0/moment-timezone-with-data-1970-2030.min.js"></script>
+
+    <title>World Clock Project</title>
+    <style>
+      body {
+        background-color: #f9f7fe;
+        font-family: sans-serif;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 60px auto 0;
+        background: white;
+        padding: 30px 30px 0;
+        border-radius: 10px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      h1 {
+        text-align: center;
+        font-family: sans-serif;
+        font-size: 36px;
+      }
+
+      h2 {
+        margin: 0 0 5px;
+        font-size: 28px;
+      }
+
+      .remove-btn {
+        background: none;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        color: #999;
+        transition: color 0.2s ease;
+      }
+
+      .remove-btn:hover {
+        color: #e74c3c;
+      }
+
+      #cities {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+
+      select {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        border-radius: 4px;
+        font-size: 18px;
+      }
+
+      .city {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        border-bottom: 1px dashed rgba(0, 0, 0, 0.2);
+        padding: 20px 0;
+        background: #fff;
+        border-radius: 8px;
+        transition: transform 0.25s ease, background 0.2s ease;
+      }
+
+      .drag-handle {
+        cursor: grab;
+        font-size: 20px;
+        margin-right: 10px;
+        user-select: none;
+        color: #888;
+      }
+
+      .drag-handle:active {
+        cursor: grabbing;
+      }
+
+      .city-dragging {
+        opacity: 0.6;
+        transform: scale(1.02);
+        background: #f0f0f0;
+      }
+
+      .city:last-child {
+        border: none;
+      }
+
+      .date {
+        opacity: 0.7;
+      }
+
+      .time {
+        font-size: 48px;
+        font-weight: bold;
+      }
+
+      .time small {
+        font-size: 24px;
+        line-height: 36px;
+        vertical-align: middle;
+      }
+
+      a {
+        text-decoration: none;
+        color: #5dade2;
+        transition: color 0.2s ease;
+      }
+
+      a:hover {
+        color: #3498db;
+      }
+
+      footer {
+        text-align: center;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.6);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>World Clock</h1>
+
+      <select id="city">
+        <option value="">Select a city...</option>
+        <option value="current">My Current Location</option>
+        <option value="Europe/London">London</option>
+        <option value="America/New_York">New York</option>
+        <option value="Pacific/Auckland">Auckland</option>
+        <option value="Asia/Tokyo">Tokyo</option>
+      </select>
+
+      <a href="#" id="home-link" style="display: none">🏠 Back to Homepage</a>
+
+      <div id="cities">
+        <div
+          class="city"
+          id="los-angeles"
+          data-timezone="America/Los_Angeles"
+          draggable="true"
+        >
+          <span class="drag-handle">☰</span>
+          <div>
+            <h2>Los Angeles 🇺🇸</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
+          <button class="remove-btn">×</button>
+        </div>
+
+        <div
+          class="city"
+          id="sydney"
+          data-timezone="Australia/Sydney"
+          draggable="true"
+        >
+          <span class="drag-handle">☰</span>
+          <div>
+            <h2>Sydney 🇦🇺</h2>
+            <div class="date"></div>
+          </div>
+          <div class="time"></div>
+          <button class="remove-btn">×</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      This project was coded by
+      <a
+        href="https://app.netlify.com/teams/beckslange/projects"
+        target="_blank"
+        ><strong>Rebecca Lange</strong>,</a
+      >
+      is open-sourced on
+      <a
+        href="https://github.com/beckslange/world-clock-project"
+        target="_blank"
+        >Github</a
+      >, and is hosted on
+      <a href="https://worldclock-final-project.netlify.app/" target="_blank"
+        >Netlify</a
+      >.
+    </footer>
+
+    <script>
+      function updateTime() {
+        const cityElements = document.querySelectorAll(".city");
+
+        cityElements.forEach((cityElement) => {
+          const timezone = cityElement.getAttribute("data-timezone");
+          if (!timezone) return;
+
+          const cityTime = moment().tz(timezone);
+          const dateElement = cityElement.querySelector(".date");
+          const timeElement = cityElement.querySelector(".time");
+
+          dateElement.innerHTML = cityTime.format("dddd, MMM Do, YYYY");
+          timeElement.innerHTML = cityTime.format(
+            "h:mm:ss [<small>]A[</small>]"
+          );
+        });
+      }
+
+      function updateCity(event) {
+        let cityTimezone = event.target.value;
+        if (cityTimezone === "current") cityTimezone = moment.tz.guess();
+        if (!cityTimezone) return;
+
+        const cityName = cityTimezone.replace("_", " ").split("/")[1];
+        const existingCity = document.querySelector(
+          `[data-timezone='${cityTimezone}']`
+        );
+        const citiesElement = document.querySelector("#cities");
+
+        const cityHTML = `
+    <div class="city" data-timezone="${cityTimezone}" draggable="true">
+      <span class="drag-handle">☰</span>
+      <div>
+        <h2>${cityName}</h2>
+        <div class="date"></div>
+      </div>
+      <div class="time"></div>
+      <button class="remove-btn">×</button>
+    </div>
+  `;
+
+        if (existingCity) {
+          if (event.target.value === "current") {
+            existingCity.remove();
+            citiesElement.insertAdjacentHTML("afterbegin", cityHTML);
+          }
+        } else {
+          if (event.target.value === "current") {
+            citiesElement.insertAdjacentHTML("afterbegin", cityHTML);
+          } else {
+            citiesElement.insertAdjacentHTML("beforeend", cityHTML);
+          }
+        }
+
+        // Show Home link when a city is selected
+        homeLink.style.display = "inline";
+
+        updateTime();
+        enableDragAndDrop();
+      }
+
+      function removeCity(event) {
+        if (event.target.classList.contains("remove-btn")) {
+          event.target.parentElement.remove();
+          checkHomeLink();
+        }
+      }
+
+      // Drag-and-drop functionality
+      function enableDragAndDrop() {
+        const container = document.querySelector("#cities");
+        let draggedItem = null;
+
+        container.querySelectorAll(".city").forEach((city) => {
+          city.onmousedown = null;
+
+          city.addEventListener("dragstart", (e) => {
+            draggedItem = city;
+            city.classList.add("dragging");
+          });
+
+          city.addEventListener("dragend", () => {
+            draggedItem.classList.remove("dragging");
+            draggedItem = null;
+          });
+        });
+
+        container.addEventListener("dragover", (e) => {
+          e.preventDefault();
+          const afterElement = getDragAfterElement(container, e.clientY);
+          if (afterElement == null) {
+            container.appendChild(draggedItem);
+          } else {
+            container.insertBefore(draggedItem, afterElement);
+          }
+        });
+      }
+
+      function getDragAfterElement(container, y) {
+        const draggableElements = [
+          ...container.querySelectorAll(".city:not(.dragging)"),
+        ];
+
+        return draggableElements.reduce(
+          (closest, child) => {
+            const box = child.getBoundingClientRect();
+            const offset = y - box.top - box.height / 2;
+            if (offset < 0 && offset > closest.offset) {
+              return { offset: offset, element: child };
+            } else {
+              return closest;
+            }
+          },
+          { offset: Number.NEGATIVE_INFINITY }
+        ).element;
+      }
+
+      // Home link functionality
+      const homeLink = document.createElement("a");
+      homeLink.href = "#";
+      homeLink.id = "home-link";
+      homeLink.innerHTML = "🏠 Back to Homepage";
+      homeLink.style.display = "none";
+      homeLink.style.marginLeft = "10px";
+      document
+        .querySelector(".container")
+        .insertBefore(homeLink, document.querySelector("#cities"));
+
+      homeLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        document.querySelector("#city").value = "";
+        homeLink.style.display = "none";
+        // Optionally hide all dynamically added cities except default ones
+        document.querySelectorAll("#cities .city").forEach((city) => {
+          if (!city.id) city.remove();
+        });
+      });
+
+      // Helper to check if Home link should be hidden
+      function checkHomeLink() {
+        const dynamicCities = document.querySelectorAll(
+          "#cities .city:not([id])"
+        );
+        if (dynamicCities.length === 0) homeLink.style.display = "none";
+      }
+
+      // Initial setup
+      updateTime();
+      setInterval(updateTime, 1000);
+
+      const citiesSelectElement = document.querySelector("#city");
+      citiesSelectElement.addEventListener("change", updateCity);
+
+      const citiesContainer = document.querySelector("#cities");
+      citiesContainer.addEventListener("click", removeCity);
+
+      enableDragAndDrop();
+    </script>
+  </body>
+</html>
